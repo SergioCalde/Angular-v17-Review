@@ -1,0 +1,32 @@
+<h4>Listado</h4>
+<ul class="list-group">
+    @for(character of characterList; track character; let i = $index, f =
+    $first, l = $last){
+    <li class="list-group-item d-flex justify-content-between align-items-center" 
+        [ngClass]="{
+            'list-group-item-success': f,
+            'list-group-item-danger' : l
+        }">
+        <div>
+            <span class="text-primary">
+                {{ i + 1 }}.
+            </span>
+            <span>
+                {{ character.name }} -
+            </span>
+            <strong>
+                Power:
+            </strong>
+            <span>
+                {{ character.power }}
+            </span>
+        </div>
+
+        <button 
+            class="btn btn-danger"
+            (click)="onDeleteCharacter( character.id )">
+            X
+        </button>
+    </li>
+    }
+</ul>
