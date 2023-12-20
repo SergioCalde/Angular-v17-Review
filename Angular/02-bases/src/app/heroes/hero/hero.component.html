@@ -1,0 +1,26 @@
+<h1>{{ name }}</h1>
+
+<dl>
+    <td>Nombre:</td>
+    <dd> {{ name }} </dd>
+    <td>Edad: </td>
+    <dd> {{ age }} </dd>
+    <td>Método: </td>
+    <dd> {{ getHeroDescription() }} </dd>
+    <td>Capitalizado: </td>
+    <dd> {{ capitalizedName }} </dd>
+</dl>
+
+<button class="btn btn-primary mx-2" (click)="changeHero()">
+    Cambiar nombre
+</button>
+@if(age !== 17){
+    <button class="btn btn-primary" (click)="changeAge()">
+        Cambir edad
+    </button>
+} @else {
+    <button class="btn btn-primary" (click)="resetForm()">
+        Reset
+    </button>
+}
+
