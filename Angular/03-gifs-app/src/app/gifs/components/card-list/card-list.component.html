@@ -1,18 +1,9 @@
 <div class="row">
-
+    @for(gif of gifs; track gif){
     <div class="col-md-3 col-sm-6">
-        <div class="card mb-2 text-center bg-dark">
-
-            <!-- TODO: Crear Imagen -->
-
-
-            <div class="card-body text-white">
-                <p class="card-text">
-                    Hola Mundo
-                </p>
-            </div>
-
-        </div>
+        <gifs-card [gif]="gif"></gifs-card>
     </div>
-
+    } @empty {
+        No hay gifs
+    }
 </div>
