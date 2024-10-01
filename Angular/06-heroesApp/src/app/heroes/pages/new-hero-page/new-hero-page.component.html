@@ -1,1 +1,81 @@
-<p>new-hero-page works!</p>
+<h1>
+    Edit / Add
+    Hero
+    <small>Superman</small>
+</h1>
+
+<mat-divider class="mb-2"></mat-divider>
+
+<div class="grid">
+    <div class="col-12 sm:col-6">
+        <mat-card>
+            <mat-card-content>
+                <div class="grid">
+                    <mat-form-field class="col-12 sm:col-6">
+                        <mat-label>Superhero</mat-label>
+                        <input 
+                            matInput 
+                            type="text" 
+                            required>
+                    </mat-form-field>
+                    
+                    <mat-form-field class="col-12 sm:col-6">
+                        <mat-label>Alter Ego</mat-label>
+                        <input 
+                            matInput 
+                            type="text" 
+                            required>
+                    </mat-form-field>
+                    
+                    <mat-form-field class="col-12">
+                        <mat-label>First Appearance</mat-label>
+                        <input 
+                            matInput 
+                            type="text" 
+                            required>    
+                    </mat-form-field>
+                    
+                    <mat-form-field class="col-12">
+                        <mat-label>Characters</mat-label>
+                        <input 
+                            matInput 
+                            type="text" 
+                            required>    
+                    </mat-form-field>
+                    
+                    <mat-form-field class="col-12">
+                        <mat-label>Creator</mat-label>
+                        <mat-select required>
+                            @for ( publisher of publishers; track $index) {
+                                <mat-option [value]="publisher.id">
+                                    {{ publisher.viewValue }}
+                                </mat-option>
+                            }
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="flex justify-content-between">
+                    <button mat-flat-button color="warm">
+                        <mat-icon>delete</mat-icon>
+                        Delete
+                    </button>
+                    
+                    <button mat-flat-button color="primary">
+                        <mat-icon>save</mat-icon>
+                        Save
+                    </button>
+                </div>
+
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-12 sm:col-6">
+        <mat-card>
+            <img mat-card-image src="" alt="hero image">
+        </mat-card>
+    </div>
+
+</div>

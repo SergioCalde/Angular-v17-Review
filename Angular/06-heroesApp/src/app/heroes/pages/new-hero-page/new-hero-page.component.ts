@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class NewHeroPageComponent {
 
+  publishers = [
+    { id: 'DC Comics', viewValue: 'DC - Comics' },
+    { id: 'Marvel Comics', viewValue: 'Marvel - Comics' },
+  ]
 }

@@ -1,0 +1,27 @@
+// :root {
+//     --mat-toolbar-container-background-color: #004f4f;
+//     --mat-toolbar-container-text-color: #00dddd;
+// }
+
+html, body { 
+    height: 100%; 
+}
+
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+
+}
+
+.spacer { 
+    flex: 1 1 auto;
+}
+
+.primary-toolbar { 
+    --mat-toolbar-container-background-color: #004f4f;
+    --mat-toolbar-container-text-color: #00dddd;
+}
+
+.color-menu{
+    color: #00dddd;
+}
