@@ -10,13 +10,17 @@
     <div class="col-12 sm:col-6">
         <mat-card>
             <mat-card-content>
-                <div class="grid">
+                <form class="grid" 
+                        (ngSubmit)="onSubmit()"
+                        [formGroup]="heroForm">
                     <mat-form-field class="col-12 sm:col-6">
                         <mat-label>Superhero</mat-label>
                         <input 
                             matInput 
                             type="text" 
-                            required>
+                            required
+                            formControlName="superhero"
+                            >
                     </mat-form-field>
                     
                     <mat-form-field class="col-12 sm:col-6">
@@ -24,7 +28,9 @@
                         <input 
                             matInput 
                             type="text" 
-                            required>
+                            required
+                            formControlName="alter_ego"
+                            >
                     </mat-form-field>
                     
                     <mat-form-field class="col-12">
@@ -32,7 +38,9 @@
                         <input 
                             matInput 
                             type="text" 
-                            required>    
+                            required
+                            formControlName="first_appearance"
+                            >    
                     </mat-form-field>
                     
                     <mat-form-field class="col-12">
@@ -40,12 +48,16 @@
                         <input 
                             matInput 
                             type="text" 
-                            required>    
+                            required
+                            formControlName="characters"
+                            >    
                     </mat-form-field>
                     
                     <mat-form-field class="col-12">
                         <mat-label>Creator</mat-label>
-                        <mat-select required>
+                        <mat-select 
+                                formArrayName="publisher"
+                                required>
                             @for ( publisher of publishers; track $index) {
                                 <mat-option [value]="publisher.id">
                                     {{ publisher.viewValue }}
@@ -53,7 +65,17 @@
                             }
                         </mat-select>
                     </mat-form-field>
-                </div>
+
+                    <mat-form-field class="col-12">
+                        <mat-label>Alternate Image</mat-label>
+                        <input 
+                            matInput 
+                            type="text" 
+                            formControlName="alt_img"
+                            >    
+                    </mat-form-field>
+
+                </form>
 
                 <div class="flex justify-content-between">
                     <button mat-flat-button color="warm">
@@ -61,7 +83,10 @@
                         Delete
                     </button>
                     
-                    <button mat-flat-button color="primary">
+                    <button 
+                        mat-flat-button 
+                        color="primary"
+                        (click)="onSubmit()">
                         <mat-icon>save</mat-icon>
                         Save
                     </button>
@@ -74,7 +99,7 @@
 
     <div class="col-12 sm:col-6">
         <mat-card>
-            <img mat-card-image src="" alt="hero image">
+            <img mat-card-image [src]="currentHero | heroImage " alt="hero image">
         </mat-card>
     </div>
 
