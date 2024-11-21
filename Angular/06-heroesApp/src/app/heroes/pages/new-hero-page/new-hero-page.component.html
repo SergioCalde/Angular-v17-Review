@@ -1,7 +1,8 @@
 <h1>
-    Edit / Add
-    Hero
-    <small>Superman</small>
+    {{ currentHero.id ? 'Edit' : 'Add' }} Hero
+    @if(currentHero.id) {
+        <small>{{ currentHero.superhero }}</small>
+    }
 </h1>
 
 <mat-divider class="mb-2"></mat-divider>
@@ -78,11 +79,15 @@
                 </form>
 
                 <div class="flex justify-content-between">
-                    <button mat-flat-button color="warm">
-                        <mat-icon>delete</mat-icon>
-                        Delete
-                    </button>
-                    
+                    @if(currentHero.id) {
+                        <button mat-flat-button
+                            (click)="onDeleteHero()"
+                            color="warm">
+                            <mat-icon>delete</mat-icon>
+                            Delete
+                        </button>
+                    }
+                    <span></span>
                     <button 
                         mat-flat-button 
                         color="primary"
@@ -97,9 +102,9 @@
         </mat-card>
     </div>
 
-    <div class="col-12 sm:col-6">
+    <div class="col-12 sm:col-4">
         <mat-card>
-            <img mat-card-image [src]="currentHero | heroImage " alt="hero image">
+            <img class="h-10" mat-card-image [src]="currentHero | heroImage " alt="hero image">
         </mat-card>
     </div>
 

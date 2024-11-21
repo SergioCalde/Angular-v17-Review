@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "usuario": "John Doe",
+      "user": "John Doe",
       "email": "john.due@gmail.com"
     }
   ],
@@ -27,7 +27,7 @@
       "id": "dc-flash",
       "superhero": "Flash",
       "publisher": "DC Comics",
-      "alter_ego": "Barry Allen",
+      "alter_ego": "Jay Garrick",
       "first_appearance": "Flash Comics #1",
       "characters": "Jay Garrick, Barry Allen, Wally West, Bart Allen"
     },

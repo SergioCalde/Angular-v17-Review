@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "usuario": "John Doe",
+      "user": "John Doe",
       "email": "john.due@gmail.com"
     }
   ],
@@ -166,6 +166,15 @@
       "alter_ego": "Norrin Radd",
       "first_appearance": "The Fantastic Four #48",
       "characters": "Norrin Radd"
+    },
+    {
+      "id": "MJgVLNs",
+      "superhero": "Doctor Manhattan",
+      "publisher": "DC Comics",
+      "alter_ego": "Jonathan Osterman",
+      "first_appearance": "Watchmen.",
+      "characters": "Dr. Jonathan \"Jon\" Osterman",
+      "alt_img": "https://i.redd.it/8svp66nw4qc31.jpg"
     }
   ]
 }
