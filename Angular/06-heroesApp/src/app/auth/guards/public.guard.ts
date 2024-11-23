@@ -22,7 +22,7 @@ export class PublicGuard implements CanMatch, CanActivate {
             }),
             map( isAuthenticated => !isAuthenticated )
         );
-    }
+    } 
 
     canMatch(route: Route, segments: UrlSegment[]): boolean | Observable<boolean> {
         return this.checkAuthStatus();
