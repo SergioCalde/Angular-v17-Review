@@ -16,7 +16,6 @@ export class RegisterPageComponent {
               private emailValidator: EmailValidatorService
   ) {
     this.myForm = this.fb.group({
-      name: ['', [ Validators.required, Validators.pattern(this.validatorsService.firstNameAndLastnamePattern) ]],
       email: ['', [ Validators.required, Validators.pattern(this.validatorsService.emailPattern) ], [ this.emailValidator ]], 
       username: ['', [ Validators.required, validatorsService.cantBeStrider ]],
       password: ['', [ Validators.required, Validators.minLength(6) ]],
