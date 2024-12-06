@@ -1,3 +1,13 @@
 <p>product works!</p>
 
-<products-price/>
+@if(isProductVisible){
+    <products-price [price]="currentPrice"></products-price>
+}
+
+<button (click)="isProductVisible = !isProductVisible">
+    Toggle
+</button>
+
+<button (click)="increeasePrice()">
+    +1 Price
+</button>
