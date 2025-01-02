@@ -1,0 +1,28 @@
+<h1>User Information</h1>
+<hr>
+
+<div class="row">
+    <div class="col-4">
+        <h3>
+            Current User: {{ userId() }}
+        </h3>
+        <button (click)="loadUser(userId() - 1)" class="btn btn-primary">Previous</button>
+        &nbsp;
+        <button (click)="loadUser(userId() + 1)" class="btn btn-primary">Next</button>
+    </div>
+
+    @if( currentUser() ) {
+    <div class="col-8">
+        <h3>User</h3>
+        <p>Email: {{ currentUser()!.email }}</p>
+        <p>Name: {{ fullName() }}</p>
+
+        <img [src]="currentUser()!.avatar" alt="Avatar" class="rounded">
+    </div>
+    }
+    @if( !userWasFound() ) {
+        <div class="col-8 text-danger">
+            <h3>User not found</h3>
+        </div>
+    }
+</div>
