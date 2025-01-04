@@ -11,7 +11,8 @@ export declare class AuthService {
     create(createUserDto: CreateUserDto): Promise<User>;
     register(registerUserDto: RegisterUserDto): Promise<LoginResponse>;
     login(loginDto: LoginDto): Promise<LoginResponse>;
-    findAll(): string;
+    findAll(): Promise<User[]>;
+    findUserById(id: string): Promise<User>;
     findOne(id: number): string;
     update(id: number, updateUserDto: UpdateUserDto): string;
     remove(id: number): string;

@@ -65,7 +65,12 @@ let AuthService = class AuthService {
         };
     }
     findAll() {
-        return `This action returns all auth`;
+        return this.userModel.find();
+    }
+    async findUserById(id) {
+        const user = await this.userModel.findById(id);
+        const { password, ...rest } = user.toJSON();
+        return rest;
     }
     findOne(id) {
         return `This action returns a #${id} auth`;

@@ -21,7 +21,6 @@ export class AuthService {
 
   async create(createUserDto: CreateUserDto): Promise<User> {
 
-    
     try {
       
       const { password, ...userData } = createUserDto;
@@ -60,7 +59,7 @@ export class AuthService {
   async login(loginDto: LoginDto):Promise<LoginResponse> {
 
     const { email, password } = loginDto;
- 
+
     const user = await this.userModel.findOne({ email });
 
     if (!user) {
@@ -80,8 +79,16 @@ export class AuthService {
 
   }
 
-  findAll() {
-    return `This action returns all auth`;
+  findAll(): Promise<User[]> {
+    return this.userModel.find();
+  }
+
+  async findUserById(id: string): Promise<User> {
+
+    const user = await this.userModel.findById( id );
+    const { password, ...rest } = user.toJSON();
+    return rest;
+  
   }
 
   findOne(id: number) {
