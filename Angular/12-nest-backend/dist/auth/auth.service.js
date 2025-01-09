@@ -56,7 +56,7 @@ let AuthService = class AuthService {
             throw new common_1.UnauthorizedException('Invalid credentials');
         }
         if (!bcrypt.compareSync(password, user.password)) {
-            throw new common_1.UnauthorizedException('Invalid credentials ');
+            throw new common_1.UnauthorizedException('Invalid password');
         }
         const { password: _, ...rest } = user.toJSON();
         return {
