@@ -1,1 +1,6 @@
-<p>change-detection works!</p>
+<app-title [title]="currentFramework()" withShadow />
+
+<h2>With Signal</h2>
+<pre>{{ frameworkAsSignal() | json }}</pre>
+<h2>With Property</h2>
+<pre>{{ frameworkAsProperty | json }}</pre>

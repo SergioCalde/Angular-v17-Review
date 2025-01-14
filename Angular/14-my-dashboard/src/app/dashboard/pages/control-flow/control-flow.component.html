@@ -1,1 +1,74 @@
-<p>control-flow works!</p>
+<app-title title="Control Flow" withShadow />
+
+
+<section class="grid grid-cols-2 md:grip-cols-2 gap-3">
+
+    <!-- @if -->
+    <div class="bg-white rounded shadow p-10">
+
+        <h2 class="text-2xl font-bold mb-5">if: {{ showContent() }}</h2>
+
+        <button (click)="toggleContent()"
+            class="p-2 bg-blue-500 text-white rounded hover:bg-blue-400">
+            Click me!
+        </button>
+
+        @if ( showContent() ) {
+            <p>Hola Mundo!</p>
+        }@else {
+            <p>********</p>
+        }
+    </div>
+
+    <!-- @switch -->
+    <div class="bg-white rounded shadow p-10">
+
+        <h2 class="text-3xl font-bold mb-5">switch: {{ grade() }}</h2>
+
+        @switch ( grade() ) {
+            @case ('A'){
+                <p>Grade above 90</p>
+            }
+            @case ('B'){
+                <p>Grade above 70</p>
+            }
+            @default {
+                <p>Failed</p>
+            }
+        }
+    </div>
+
+    <!-- @for -->
+    <div class="bg-white rounded shadow p-10">
+        <h2 class="text-3xl font-bold mb-5">For</h2>
+        <ul>
+            @for(framework of frameworks(); track framework; 
+                let i = $index, first = $first, last = $last, even = $even, odd = $odd, count = $count;) {
+                <li [class]="{
+                    'bg-red-100': even && !first && !last,
+                    'bg-blue-100': odd && !first && !last,
+                    'bg-green-100': first,
+                    'bg-yellow-100': last,
+                }">
+                    {{ i + 1 }}/{{ count }} - {{ framework }}
+                </li>
+            }
+        </ul>
+        
+        
+    </div>
+    
+    <div class="bg-white rounded shadow p-10">
+        <h2 class="text-3xl font-bold mb-5">Empty</h2>
+        <ul>
+            @for(framework of frameworks2(); track framework; ) {
+                <li>{{ framework }}</li>
+            }@empty {
+                <li>No frameworks</li>
+            }
+        </ul>
+    </div>
+
+</section>
+
+    
