@@ -8,10 +8,9 @@ import { switchMap } from 'rxjs';
 import { UsersService } from '@services/users.service';
 
 @Component({
-  standalone: true,
-  imports: [TitleComponent ],
-  templateUrl: './user.component.html',
-  styleUrl: './user.component.css'
+    imports: [TitleComponent],
+    templateUrl: './user.component.html',
+    styleUrl: './user.component.css'
 })
 export default class UserComponent {
 

@@ -3,11 +3,10 @@ import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/c
 import { TitleComponent } from '@shared/title/title.component';
 
 @Component({
-  standalone: true,
-  imports: [TitleComponent, CommonModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './change-detection.component.html',
-  styleUrl: './change-detection.component.css'
+    imports: [TitleComponent, CommonModule],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    templateUrl: './change-detection.component.html',
+    styleUrl: './change-detection.component.css'
 })
 export default class ChangeDetectionComponent {
 

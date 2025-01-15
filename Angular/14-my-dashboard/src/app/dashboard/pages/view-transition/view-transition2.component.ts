@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 import { TitleComponent } from '@shared/title/title.component';
 
 @Component({
-  standalone: true,
-  imports: [TitleComponent],
-  template: `
+    imports: [TitleComponent],
+    template: `
     <app-title title="View Transition 2" />
 
     <section class="flex justify-end">

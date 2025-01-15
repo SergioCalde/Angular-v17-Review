@@ -3,10 +3,9 @@ import { RouterOutlet } from '@angular/router';
 import { SideMenuComponent } from '@shared/side-menu/side-menu.component';
 
 @Component({
-  standalone: true,
-  imports: [RouterOutlet, SideMenuComponent],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+    imports: [RouterOutlet, SideMenuComponent],
+    templateUrl: './dashboard.component.html',
+    styleUrl: './dashboard.component.css'
 })
 export default class DashboardComponent {
 

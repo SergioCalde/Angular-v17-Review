@@ -5,10 +5,9 @@ import { TitleComponent } from '@shared/title/title.component';
 
 type Grade = 'A' | 'B' | 'F';
 @Component({
-  standalone: true,
-  imports: [TitleComponent],
-  templateUrl: './control-flow.component.html',
-  styleUrl: './control-flow.component.css'
+    imports: [TitleComponent],
+    templateUrl: './control-flow.component.html',
+    styleUrl: './control-flow.component.css'
 })
 export default class ControlFlowComponent {
 
